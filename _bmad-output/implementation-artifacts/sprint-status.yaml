@@ -1,0 +1,89 @@
+# generated: 2026-01-03
+# project: finance-doctor
+# project_key: finance-doctor
+# tracking_system: file-system
+# story_location: _bmad-output/implementation-artifacts
+
+# STATUS DEFINITIONS:
+# ==================
+# Epic Status:
+#   - backlog: Epic not yet started
+#   - in-progress: Epic actively being worked on
+#   - done: All stories in epic completed
+#
+# Epic Status Transitions:
+#   - backlog → in-progress: Automatically when first story is created (via create-story)
+#   - in-progress → done: Manually when all stories reach 'done' status
+#
+# Story Status:
+#   - backlog: Story only exists in epic file
+#   - ready-for-dev: Story file created in stories folder
+#   - in-progress: Developer actively working on implementation
+#   - review: Ready for code review (via Dev's code-review workflow)
+#   - done: Story completed
+#
+# Retrospective Status:
+#   - optional: Can be completed but not required
+#   - done: Retrospective has been completed
+#
+# WORKFLOW NOTES:
+# ===============
+# - Epic transitions to 'in-progress' automatically when first story is created
+# - Stories can be worked in parallel if team capacity allows
+# - SM typically creates next story after previous one is 'done' to incorporate learnings
+# - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
+
+generated: 2026-01-03
+project: finance-doctor
+project_key: finance-doctor
+tracking_system: file-system
+story_location: _bmad-output/implementation-artifacts
+
+development_status:
+  epic-1: in-progress
+  1-1-initialize-monorepo-project-structure: ready-for-dev
+  1-2-configure-frontend-development-environment: backlog
+  1-3-configure-backend-development-environment: backlog
+  1-4-set-up-database-layer-with-drizzle-orm: backlog
+  1-5-configure-docker-containerization: backlog
+  1-6-set-up-ci-cd-pipeline-with-github-actions: backlog
+  1-7-configure-coolify-deployment: backlog
+  epic-1-retrospective: optional
+
+  epic-2: backlog
+  2-1-create-user-and-category-database-schema: backlog
+  2-2-implement-session-based-authentication-system: backlog
+  2-3-build-login-ui-and-authentication-flow: backlog
+  2-4-create-onboarding-flow-with-category-setup: backlog
+  2-5-implement-telegram-bot-connection-setup: backlog
+  epic-2-retrospective: optional
+
+  epic-3: backlog
+  3-1-create-expense-database-schema: backlog
+  3-2-build-natural-language-expense-parser: backlog
+  3-3-implement-telegram-bot-expense-logging: backlog
+  3-4-add-backdating-support-for-expenses: backlog
+  3-5-create-expense-retrieval-api-endpoints: backlog
+  epic-3-retrospective: optional
+
+  epic-4: backlog
+  4-1-create-expenses-pinia-store: backlog
+  4-2-build-dashboard-view-with-current-month-layout: backlog
+  4-3-implement-expense-list-component: backlog
+  4-4-create-category-spending-chart-component: backlog
+  4-5-implement-responsive-design-for-mobile-access: backlog
+  epic-4-retrospective: optional
+
+  epic-5: backlog
+  5-1-create-categories-pinia-store: backlog
+  5-2-build-category-management-view: backlog
+  5-3-implement-edit-category-functionality: backlog
+  5-4-add-delete-category-with-usage-validation: backlog
+  epic-5-retrospective: optional
+
+  epic-6: backlog
+  6-1-create-monthly-summary-api-endpoint: backlog
+  6-2-implement-spending-insights-service: backlog
+  6-3-build-reports-view-component: backlog
+  6-4-create-spending-insights-display-component: backlog
+  epic-6-retrospective: optional
