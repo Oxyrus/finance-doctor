@@ -42,7 +42,7 @@ story_location: _bmad-output/implementation-artifacts
 development_status:
   epic-1: in-progress
   1-1-initialize-monorepo-project-structure: done
-  1-2-configure-frontend-development-environment: backlog
+  1-2-configure-frontend-development-environment: done
   1-3-configure-backend-development-environment: backlog
   1-4-set-up-database-layer-with-drizzle-orm: backlog
   1-5-configure-docker-containerization: backlog
