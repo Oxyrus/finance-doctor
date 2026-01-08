@@ -2,6 +2,7 @@ import Fastify from 'fastify'
 import helmet from '@fastify/helmet'
 import cors from '@fastify/cors'
 import env from '@fastify/env'
+import { initializeDatabase, checkDatabaseConnection } from './db/index'
 
 interface EnvConfig {
   PORT: number
@@ -65,6 +66,11 @@ const fastify = Fastify({
 // Register environment variable validation first
 await fastify.register(env, { schema, dotenv: true })
 
+// Initialize database connection
+const dbPath = fastify.config.DATABASE_PATH || './data/finance.db'
+initializeDatabase(dbPath)
+fastify.log.info(`Database initialized at ${dbPath}`)
+
 // Register plugins
 await fastify.register(helmet)
 await fastify.register(cors, {
@@ -73,7 +79,11 @@ await fastify.register(cors, {
 
 // Health check endpoint
 fastify.get('/api/health', async (_request, _reply) => {
-  return { status: 'ok' }
+  const isDatabaseHealthy = checkDatabaseConnection()
+  return {
+    status: isDatabaseHealthy ? 'ok' : 'degraded',
+    database: isDatabaseHealthy ? 'connected' : 'disconnected'
+  }
 })
 
 // Start server
