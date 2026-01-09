@@ -2,7 +2,7 @@ import Fastify from 'fastify'
 import helmet from '@fastify/helmet'
 import cors from '@fastify/cors'
 import env from '@fastify/env'
-import { initializeDatabase, checkDatabaseConnection } from './db/index'
+import { initializeDatabase, checkDatabaseConnection } from './db/index.js'
 
 interface EnvConfig {
   PORT: number
