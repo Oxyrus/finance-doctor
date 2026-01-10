@@ -48,7 +48,7 @@ development_status:
   1-5-configure-docker-containerization: done
   1-6-set-up-ci-cd-pipeline-with-github-actions: done
   1-7-configure-coolify-deployment: done
-  epic-1-retrospective: optional
+  epic-1-retrospective: done
 
   epic-2: backlog
   2-1-create-user-and-category-database-schema: backlog
