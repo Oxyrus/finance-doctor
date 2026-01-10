@@ -46,7 +46,7 @@ development_status:
   1-3-configure-backend-development-environment: done
   1-4-set-up-database-layer-with-drizzle-orm: done
   1-5-configure-docker-containerization: done
-  1-6-set-up-ci-cd-pipeline-with-github-actions: in-progress
+  1-6-set-up-ci-cd-pipeline-with-github-actions: done
   1-7-configure-coolify-deployment: backlog
   epic-1-retrospective: optional
 

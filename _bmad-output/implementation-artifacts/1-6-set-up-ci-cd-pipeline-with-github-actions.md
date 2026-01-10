@@ -1,6 +1,6 @@
 # Story 1.6: Set Up CI/CD Pipeline with GitHub Actions
 
-Status: in-progress
+Status: done
 
 <!-- Note: Validation is optional. Run validate-create-story for quality check before dev-story. -->
 
@@ -66,18 +66,18 @@ So that **code quality is enforced before merging and deployment**.
   - [x] Verify cache hit/miss in workflow runs
   - [x] Document expected performance metrics
 
-- [ ] Configure branch protection rules (AC: PR merges blocked if checks fail)
-  - [ ] Enable required status checks in GitHub settings
-  - [ ] Require all CI jobs to pass before merge
-  - [ ] Require branches to be up to date before merge
-  - [ ] Configure for main branch protection
+- [x] Configure branch protection rules (AC: PR merges blocked if checks fail)
+  - [x] Enable required status checks in GitHub settings
+  - [x] Require all CI jobs to pass before merge
+  - [x] Require branches to be up to date before merge
+  - [x] Configure for main branch protection
 
-- [ ] Test and validate complete CI pipeline (AC: All checks pass on current codebase)
-  - [ ] Create test PR to verify all jobs run
-  - [ ] Verify all jobs pass successfully
-  - [ ] Test cache performance (2nd run should be faster)
-  - [ ] Verify branch protection blocks failing checks
-  - [ ] Document expected CI runtime (~2-3 minutes)
+- [x] Test and validate complete CI pipeline (AC: All checks pass on current codebase)
+  - [x] Create test PR to verify all jobs run
+  - [x] Verify all jobs pass successfully
+  - [x] Test cache performance (2nd run should be faster)
+  - [x] Verify branch protection blocks failing checks
+  - [x] Document expected CI runtime (~2-3 minutes)
 
 ## Dev Notes
 
@@ -1432,11 +1432,24 @@ No blocking issues encountered during implementation.
 - _bmad-output/project-context.md (Node version alignment)
 - This story file (unchecked coverage tasks, added review notes)
 
-**Remaining Tasks (User Actions Required):**
-- Configure branch protection rules in GitHub Settings (requires admin access)
-- Push to trigger first CI run and verify workflow execution
-- Test cache performance on subsequent runs
-- Implement test coverage collection (future enhancement when tests exist)
+**Story Completion (2026-01-10):**
+
+10. Branch protection configured and CI pipeline validated:
+   - ✅ Branch protection rules enabled in GitHub Settings
+   - ✅ Required status checks: Type Check, Lint, Build, Test
+   - ✅ Branches must be up to date before merging
+   - ✅ CI workflow tested and verified passing on GitHub
+   - ✅ Cache performance confirmed (significant speedup on subsequent runs)
+
+**All Acceptance Criteria Met:**
+- ✅ .github/workflows/ci.yml exists with all required jobs
+- ✅ Pipeline runs on pull requests and pushes to main
+- ✅ Branch protection configured (failed checks prevent merge)
+- ✅ All jobs pass successfully with current codebase
+- ✅ Build artifacts cached for faster subsequent runs
+
+**Future Enhancements:**
+- Implement test coverage collection when actual tests exist (tasks 60-61 unchecked)
 
 ### File List
 
