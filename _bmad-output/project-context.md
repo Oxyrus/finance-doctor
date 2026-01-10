@@ -25,7 +25,7 @@ _This file contains critical rules and patterns that AI agents must follow when 
 
 **Backend:**
 - Fastify 5.x with TypeScript 5.x
-- Node.js 20+ (required)
+- Node.js 22.12+ (required)
 - Drizzle ORM with better-sqlite3 driver (synchronous SQLite)
 - @fastify/session (session management)
 - Zod (validation - shared with frontend)
