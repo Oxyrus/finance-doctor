@@ -1,5 +1,7 @@
 # finance-doctor
 
+![CI](https://github.com/Oxyrus/finance-doctor/actions/workflows/ci.yml/badge.svg)
+
 Privacy-first personal finance tracking with Telegram bot integration.
 
 ## Setup
@@ -13,6 +15,19 @@ Privacy-first personal finance tracking with Telegram bot integration.
 
 - Frontend: `npm run dev:frontend` (http://localhost:5173)
 - Backend: `npm run dev:backend` (http://localhost:3000)
+
+### Running CI Checks Locally
+
+Before pushing, run these commands to ensure CI will pass:
+
+```bash
+npm run type-check  # TypeScript type checking
+npm run lint        # ESLint linting
+npm run build       # Build verification
+npm run test:unit   # Unit tests
+```
+
+All checks must pass for pull requests to be merged.
 
 ## Tech Stack
 
