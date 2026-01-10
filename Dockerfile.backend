@@ -23,8 +23,8 @@ RUN npm run build
 # Production stage
 FROM node:22.12-alpine
 
-# Install wget for health checks
-RUN apk add --no-cache wget
+# Install wget for health checks and dcron for backup scheduling
+RUN apk add --no-cache wget dcron
 
 WORKDIR /app
 
@@ -44,10 +44,18 @@ COPY --from=build /app/backend/dist ./backend/dist
 COPY backend/src/db/migrations ./backend/dist/db/migrations
 
 # Create data directories for volume mounts
-RUN mkdir -p /data /backups
+RUN mkdir -p /data /backups /var/log
+
+# Copy backup script
+COPY scripts/backup.sh /usr/local/bin/backup.sh
+RUN chmod +x /usr/local/bin/backup.sh
+
+# Add cron job for daily backups at 2am
+RUN echo "0 2 * * * /usr/local/bin/backup.sh >> /var/log/backup.log 2>&1" | crontab -
 
 WORKDIR /app/backend
 
 EXPOSE 3000
 
-CMD ["node", "dist/server.js"]
+# Start cron daemon in background and Node.js application
+CMD crond -b && node dist/server.js
